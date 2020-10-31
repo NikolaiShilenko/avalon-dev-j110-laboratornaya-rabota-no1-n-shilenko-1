@@ -15,8 +15,31 @@ package ru.avalon.java.dev.j10.labs.models;
  *  <li> орган, выдавший документ.
  * </ol>
  */
-class Passport {
 
+public class Passport {
+    private String fullPassportNumber;
+    private String firstName;
+    private String lastName;
+    private String patronymic;
+    private String middleName;
+    private String birthDate;
+    private String passportIssueDate;
+    private String passportAuthority;
+    
+    public Passport(String fullPassportNumber, String firstName, String lastName, String birthDate, String passportIssueDate, String passportAuthority) {
+        this.fullPassportNumber = fullPassportNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.passportIssueDate = passportIssueDate;
+        this.passportAuthority = passportAuthority;
+    }
+
+    public Passport(String fullPassportNumber, String firstName, String lastName, String patronymic, String birthDate, String passportIssueDate, String passportAuthority) {
+        this(fullPassportNumber, firstName, lastName, birthDate, passportIssueDate, passportAuthority);
+        this.patronymic = patronymic;
+    }
+    
     /*
      * TODO(Студент): Закончить определение класса.
      *
@@ -37,4 +60,70 @@ class Passport {
      * 5. Обеспечте возможность использования класса за
      *    пределами пакета.
      */
+
+    public String getFullPassportNumber() {
+        return fullPassportNumber;
+    }
+
+    public void setFullPassportNumber(String fullPassportNumber) {
+        this.fullPassportNumber = fullPassportNumber;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public void setPatronymic(String patronymic) {
+        this.middleName = null;
+        this.patronymic = patronymic;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.patronymic = null;
+        this.middleName = middleName;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getPassportIssueDate() {
+        return passportIssueDate;
+    }
+
+    public void setPassportIssueDate(String passportIssueDate) {
+        this.passportIssueDate = passportIssueDate;
+    }
+
+    public String getPassportAuthority() {
+        return passportAuthority;
+    }
+
+    public void setPassportAuthority(String passportAuthority) {
+        this.passportAuthority = passportAuthority;
+    }
 }
